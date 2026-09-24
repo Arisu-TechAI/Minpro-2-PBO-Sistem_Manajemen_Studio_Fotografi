@@ -27,3 +27,21 @@ Dalam proses pembuatan dan perancangan program ini, dibuatlah beberapa penyesuai
   Memperbaiki klasifikasi jenis paket jasa Foto dari sebelumnya yang berupa atribut mentah menjadi **Super-Class** sehingga class lainnya dapat mewarisi sifat, data, dan method dari Super-Class ini.
 - **Pembuatan konsep Otomatisasi ID**  
   Program disesuaikan agar tidak lagi membutuhkan input ID manual oleh pengguna ketika sistem sedang digunakan untuk melakukan pembuatan transaksi dan invoice untuk menghindari bentrokan data. Seluruh ID tersebut akan di-*generate* secara otomatis oleh sistem.  
+
+### Latar Belakang Tujuan Pembuatan Program  
+**1. Masalah Operasional Industri Studio Fotografi**
+Usaha jasa studio fotografi modern terus berkembang seiring meningkatnya kebutuhan masyarakat akan dokumentasi momen penting (wisuda, *portrait*, hingga *wedding*). Namun, sebagian besar manajemen studio skala kecil hingga menengah masih mengandalkan pencatatan pesanan secara manual. Hal ini menimbulkan beberapa masalah operasional:
+- **Risiko Duplikasi & Kesalahan Data:** Pencatatan manual rentan terhadap kesalahan penulisan ID pesanan, nomor telepon klien, atau jadwal sesi yang bentrok antar-pelanggan.
+- **Kurangnya Transparansi Detail Paket:** Klien sering kali kesulitan membedakan spesifikasi antar-paket (misalnya beda durasi sesi untuk paket studio reguler vs jumlah kru untuk paket *event outdoor*).
+- **Kesulitan Memantau Status Pembayaran:** Pihak studio sering kesulitan memisahkan transaksi mana yang masih berstatus *DP/Belum Lunas* dan mana yang sudah *Lunas*, yang berdampak pada ketidakpastian arus kas.
+
+**Oleh karena itu**, program ini dibangun sebagai **solusi digitalisasi sistem reservasi** yang memungut data pemesanan secara otomatis, tervalidasi, dan terstruktur.  
+
+**2. Tantangan Pengembangan Perangkat Lunak**  
+Dari sisi akademis dan rekayasa perangkat lunak, pembuatan program ini menjadi sarana untuk menyelesaikan beberapa tantangan pengembangan aplikasi CLI:
+
+- **Penerapan Arsitektur Bersih (MVC):** Mencegah penumpukan kode pada satu class utama (*spaghetti code*) dengan memisahkan *Model* (penyimpanan data), *View* (antarmuka input/output), dan *Controller* (logika bisnis).
+- **Integritas Data melalui Validasi Input:** Menghindari *program crash* atau penyimpanan data yang asal-asalan saat pengguna salah memasukkan format teks, nomor telepon, atau opsi menu.
+- **Kebutuhan Keamanan Data (Encapsulation):** Memastikan seluruh data sensitif milik klien dan nilai transaksi terproteksi dari akses luar yang tidak sah (*direct variable access*).
+- **Skalabilitas Fitur (Inheritance & Polymorphism):** Memudahkan penambahan jenis layanan foto baru di masa depan tanpa harus merombak struktur kode yang sudah ada.
+
