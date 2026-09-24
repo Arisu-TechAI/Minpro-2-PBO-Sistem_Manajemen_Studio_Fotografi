@@ -59,8 +59,14 @@ Pada pengerjaan Mini Project 2 ini, kode-kode program tidak lagi ditumpuk pada s
   -  **Transaksi.java** : Class yang berfungsi sebagai lembar kuitansi/nota pesanan utuh. Class ini menggabungkan data pelanggan dari class Client dengan paket foto dari class LayananFotografi, lalu menambahkan informasi tanggal sesi foto serta status pembayaran (Belum Lunas/Lunas).
  
 - **Package _controller_**
-  Package ini bertindak sebagai **Otak** dari sistem yang ada dalam program Studio Fotografi ini. Fungsinya adalah mengelola keperluan operasional program yang ada pada class dibawahnya. Package ini memiliki sebuah class yaitu :
-  - **Transaksi_Controller** : Fungsi class ini adalah mengelola lemari penyimpanan berkas digital (ArrayList). Tugas-tugas tersebut meliputi :  
+  Package ini bertindak sebagai pengontrol dari sistem yang ada dalam program Studio Fotografi ini. Fungsinya adalah mengelola keperluan operasional program yang ada pada class dibawahnya. Package ini memiliki sebuah class yaitu :
+  - **Transaksi_Controller.java** : Fungsi class ini adalah mengelola lemari penyimpanan berkas digital (ArrayList). Tugas-tugas tersebut meliputi :  
       - Membuatkan nomor ID otomatis  
       - Menyiapkan data sampel awal  
       - Mencari data pesanan di dalam lemari berkas, menambahkan pesanan baru, serta mengubah status pembayaran pelanggan dari belum lunas menjadi lunas  
+
+- **Package __View__**  
+  Package ini adalah sebagai pengatur tampilan antarmuka dari program ini. Package ini memiliki class yaitu :
+  - **Menu.java**
+    Class ini bertindak sebagai tampilan antarmuka dari program. Tugasnya adalah menyapa pengguna di layar terminal, menampilkan pilihan menu, dan menerima ketikan input.  
+
