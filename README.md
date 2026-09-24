@@ -45,3 +45,22 @@ Dari sisi akademis dan rekayasa perangkat lunak, pembuatan program ini menjadi s
 - **Kebutuhan Keamanan Data (Encapsulation):** Memastikan seluruh data sensitif milik klien dan nilai transaksi terproteksi dari akses luar yang tidak sah (*direct variable access*).
 - **Skalabilitas Fitur (Inheritance & Polymorphism):** Memudahkan penambahan jenis layanan foto baru di masa depan tanpa harus merombak struktur kode yang sudah ada.
 
+# 2. Penjelasan Struktur Package  
+Pada pengerjaan Mini Project 2 ini, kode-kode program tidak lagi ditumpuk pada satu package atau class, melainkan dipisahkan menjadi 4 **Package** utama yang disesuaikan berdasarkan tugas dan fungsinya. Adapun Package dan Class yang dibuat adalah sebagai berikut :  
+- **Package _Main_**  
+  Package ini berisi sebuah class yaitu **main.java** yang berisi method *main(string[] args)*. Tugas class ini hanya menginstansiasi sebuah class lain yaitu class **Menu** dan berfungsi untuk menjalankan antarmuka aplikasi, sehingga file utama dalam program dibuat bersih dari sistem logika bisnis.
+  
+- **Package _model_**  
+  Package ini digunakan untuk menyimpan seluruh struktur data dari entitas, model objek dunia nyata, dan aturan bisnis yang ada. Fungsinya adalah mendefinisikan atribut-atribut data yang ada di dalam class nya dan menyimpan data tersebut dengan menerapkan konsep *Encapsulation*. Adapun class-class yang terdapat pada package ini yaitu :
+  - **LayananFotografi.java (Super-class)** : Class ini digunakan sebagai *Parent* dari seluruh class yang memiliki atribut terkait tipe layanan jasa fotografi.  
+  -  **PaketReguler.java (Sub-class)** : Class ini berfungsi untuk menyimpan atribut spesifik terkait jenis paket jasa fotografi di *Indoor/Studio*.
+  -  **Paket Event.java (Sub-class)** : Class ini digunakan untuk menyimpan atribut spesifik terkait jenis paket jasa fotografi di *Outdoor*.
+  -  **Client.java** : Class yang digunakan untuk menyimpan informasi data pelanggan, seperti ID, nama, dan nomor telepon.
+  -  **Transaksi.java** : Class yang berfungsi sebagai lembar kuitansi/nota pesanan utuh. Class ini menggabungkan data pelanggan dari class Client dengan paket foto dari class LayananFotografi, lalu menambahkan informasi tanggal sesi foto serta status pembayaran (Belum Lunas/Lunas).
+ 
+- **Package _controller_**
+  Package ini bertindak sebagai **Otak** dari sistem yang ada dalam program Studio Fotografi ini. Fungsinya adalah mengelola keperluan operasional program yang ada pada class dibawahnya. Package ini memiliki sebuah class yaitu :
+  - **Transaksi_Controller** : Fungsi class ini adalah mengelola lemari penyimpanan berkas digital (ArrayList). Tugas-tugas tersebut meliputi :  
+      - Membuatkan nomor ID otomatis  
+      - Menyiapkan data sampel awal  
+      - Mencari data pesanan di dalam lemari berkas, menambahkan pesanan baru, serta mengubah status pembayaran pelanggan dari belum lunas menjadi lunas  
