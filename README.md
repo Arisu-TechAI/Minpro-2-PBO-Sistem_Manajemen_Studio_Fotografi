@@ -47,6 +47,9 @@ Dari sisi akademis dan rekayasa perangkat lunak, pembuatan program ini menjadi s
 
 # 2. Penjelasan Struktur Package  
 Pada pengerjaan Mini Project 2 ini, kode-kode program tidak lagi ditumpuk pada satu package atau class, melainkan dipisahkan menjadi 4 **Package** utama yang disesuaikan berdasarkan tugas dan fungsinya. Adapun Package dan Class yang dibuat adalah sebagai berikut :  
+
+<img width="564" height="320" alt="Screenshot 2026-09-25 073226" src="https://github.com/user-attachments/assets/7ce09f37-cb07-45f8-a003-69ceb659b90a" />
+
 - **Package _Main_**  
   Package ini berisi sebuah class yaitu **main.java** yang berisi method *main(string[] args)*. Tugas class ini hanya menginstansiasi sebuah class lain yaitu class **Menu** dan berfungsi untuk menjalankan antarmuka aplikasi, sehingga file utama dalam program dibuat bersih dari sistem logika bisnis.
   
@@ -70,3 +73,9 @@ Pada pengerjaan Mini Project 2 ini, kode-kode program tidak lagi ditumpuk pada s
   - **Menu.java**
     Class ini bertindak sebagai tampilan antarmuka dari program. Tugasnya adalah menyapa pengguna di layar terminal, menampilkan pilihan menu, dan menerima ketikan input.  
 
+# 3. Penjelasan Alur Program  
+a. **Start up Program**  
+Saat program baru dibuka melalui class **main**, class ini bertindak sebagai titik masuk eksekusi (entry point). Tugas kelas dibatasi hanya untuk menginstansiasi class **Menu** yang berfungsi untuk menampilkan tampilan pilihan menu kepada pengguna, dan menerima input pilihan pengguna saat menjalankan program aplikasi.  
+<img width="413" height="187" alt="Menu Awal startup" src="https://github.com/user-attachments/assets/6333e2ff-6278-4c50-a7cb-3c5516adadf4" />  
+
+Untuk mengakses pilihan menu di atas, pengguna dapat mengetik angka pilihan menu pada kolom input (Misal angka "1" untuk menambah/membuat pesanan), maka program akan mengarahkan pengguna ke antarmuka yang sesuai dengan kebutuhan.
