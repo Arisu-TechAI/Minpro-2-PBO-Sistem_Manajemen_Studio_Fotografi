@@ -74,8 +74,38 @@ Pada pengerjaan Mini Project 2 ini, kode-kode program tidak lagi ditumpuk pada s
     Class ini bertindak sebagai tampilan antarmuka dari program. Tugasnya adalah menyapa pengguna di layar terminal, menampilkan pilihan menu, dan menerima ketikan input.  
 
 # 3. Penjelasan Alur Program  
-a. **Start up Program**  
+A. **Start up Program**  
 Saat program baru dibuka melalui class **main**, class ini bertindak sebagai titik masuk eksekusi (entry point). Tugas kelas dibatasi hanya untuk menginstansiasi class **Menu** yang berfungsi untuk menampilkan tampilan pilihan menu kepada pengguna, dan menerima input pilihan pengguna saat menjalankan program aplikasi.  
 <img width="413" height="187" alt="Menu Awal startup" src="https://github.com/user-attachments/assets/6333e2ff-6278-4c50-a7cb-3c5516adadf4" />  
 
-Untuk mengakses pilihan menu di atas, pengguna dapat mengetik angka pilihan menu pada kolom input (Misal angka "1" untuk menambah/membuat pesanan), maka program akan mengarahkan pengguna ke antarmuka yang sesuai dengan kebutuhan.
+Untuk mengakses pilihan menu di atas, pengguna dapat mengetik angka pilihan menu pada kolom input (Misal angka "1" untuk menambah/membuat pesanan), maka program akan mengarahkan pengguna ke antarmuka yang sesuai dengan kebutuhan.  
+
+B. **Validasi Input & Antarmuka**  
+Saat prorgam sedang dijalankan, sistem harus melakukan validasi terhadap input yang dilakukan oleh pengguna, apakah sudah sesuai dengan rancangan yang dibuat di dalam sistem atau tidak. Tujuannya adalah agar program dapat dijalankan sebagaimana mestinya sesuai kebutuhan pengguna, jika input yang dilakukan tidak valid, maka program akan mengembalikan pengguna ke tampilan sebelumnya dan meminta agar pengguna memasukan input yang sesuai dengan pilihan menu yang ada.    
+<img width="380" height="209" alt="Contoh salah input" src="https://github.com/user-attachments/assets/07eca57e-6892-4efe-bc97-38d40f7210c1" />  
+
+Kode program yang bertugas melakukan validasii input dapat diperhatikan pada contoh berikut :  
+<img width="971" height="177" alt="Menu java" src="https://github.com/user-attachments/assets/61d932e1-ea48-47c4-9e63-cc1fe84917c2" />  
+
+Kode di atas adalah program yang berfungsi melakukan validasi input Nomor Telepon pengguna saat membuat pesanan. Penerapan ekspresi reguler *(\\d{10,14})* digunakan untuk memastikan masukan pengguna hanya terdiri dari karakter angka dengan panjang 10 hingga 14 digit. Perulangan **while** menjaga aliran program tetap berjalan hingga syarat validasi terpenuhi.  
+
+C. **Penerapan Konsep _Auto-Generate ID_**  
+<img width="623" height="198" alt="kode auto generate" src="https://github.com/user-attachments/assets/a36cbc34-545e-4a87-ba9a-aefb2e269283" />  
+Pada class **Transaksi_Controller**, diterapkan konsep otomatisasi pada ID yang dibuat pada program, yaitu ID untuk Transaksi yang dilakukan, dan ID untuk Invoice hasil pembayaran. Penerapannya pada konde program, digunakan fungsi **String.Format()** yang berfungsi membuat pola penamaan ID secara terstruktur. Variabel **_counterTransaksi_** melakukan penambahan nilai secara bertahap (inkremental) untuk memastikan setiap ID bersifat unik.  
+<img width="648" height="397" alt="auto generate id (sebelum)" src="https://github.com/user-attachments/assets/feec1e8c-f9d2-47bc-8b23-0bf5530930d9" />  
+Dapat diperhatikan pada gambar di atas, ID Transaksi (TRX-001) tersebut merupakan kode unik dari setiap transaksi yang dilakukan. Ketika pengguna melakukan transaksi baru, Sistem akan membuat ID transaksi baru juga, sehingga setiap transaksi yang dilakukan selalu bersifat unik dan dapat diindentifikasi lebih baik.  
+<img width="534" height="408" alt="Screenshot 2026-09-25 082151" src="https://github.com/user-attachments/assets/aa6674ed-a8a1-4b10-b307-b7f9e9863df9" />  
+
+D. **Penerapan Polymorphism**  
+<img width="1101" height="444" alt="Polymorphism Transaksi java" src="https://github.com/user-attachments/assets/34f1fb41-d4ba-473d-b84f-9b619a68f210" />  
+Pada class **Transaksi.java**, class ini berisi data yang disimpan yang digunakan untuk Menampilkan daftar transaksi yang memuat informasi gabungan antara data klien, paket yang dipilih, serta pencetakan rincian struk. Kelas ini menerapkan method overloading, yaitu dua method dengan nama sama **(cetakStruk)** namun memiliki parameter yang berbeda. Pemanggilan method **paket.detailLayanan()** mengeksekusi bentuk polymorphism berdasarkan tipe objek asli yang disimpan di dalam class **PaketReguler atau PaketEvent**.  
+<img width="648" height="397" alt="Polymorpishm pada data client, paket,   rincian struk" src="https://github.com/user-attachments/assets/43dd77d0-1c6e-4d7d-8bdd-9c2f655c2d05" />  
+
+
+
+
+
+
+
+
+
